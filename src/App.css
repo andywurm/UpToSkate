@@ -1,11 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 
 .App {
   text-align: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+  /* display: flex;
+  flex-direction: column; */
   align-items: center;
   justify-content: center;
   font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Links{
+  color: black;
+}
+
+.Links:hover{
+  transform: scale(1.1);
+  color: rgb(64, 131, 203);
+}
+
+.active{
+  color: rgb(64, 131, 203);
+}
+
+.enterEmail:focus{
+  outline: none;
+}
+
+.homeBtn:hover{
+  transform: scale(1.1);
 }
