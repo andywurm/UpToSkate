@@ -1,7 +1,13 @@
 import HomePic from '../Images/HomePic.jpg'
 import { motion } from 'framer-motion'
 
-const Home = () => {
+interface IPropsHome{
+    navColor : boolean
+    setNavColor : Function
+}
+
+const Home = (props : IPropsHome) => {
+    props.setNavColor(false)
     return (
         <motion.div
         

@@ -13,8 +13,8 @@ function App() {
     <div className="App" style={{ }}>
       <div style={{height: "100%"}}>
         <Router>
-          <Navigation />
-          <AnimatedRoutes />
+          <Navigation navColor={navColor}/>
+          <AnimatedRoutes navColor={navColor} setNavColor={setNavColor}/>
           <Footer />
         </Router>
       </div>
