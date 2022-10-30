@@ -1,5 +1,78 @@
 .SearchArea{
     height: 400px;
-    background-color: '#5ea6eb';
+    background-color: #5ea6eb;
     position: relative;
+}
+
+.Search{
+    padding-top: 100px;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: white;
+}
+
+.Type{
+    padding-top: 10px;
+    color: #d3eaf2;
+    font-weight: 500; 
+    margin-bottom: 3%;
+}
+
+.actualSearchArea{
+    background-color: white;
+    border-radius: 20px;
+    height: 10%;
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.first{
+    flex-direction: column; 
+    flex-basis: 10%;
+}
+.second{
+    flex-direction: column; 
+    flex-basis: 90%;
+}
+
+.magnify{
+    height: 70%; 
+    margin-top: 5px;
+}
+
+.inputBar{
+    width: 97%; 
+    height: 95%;
+    border-style: none; 
+    border-radius: 15px; 
+    font-size: 1.2em;
+}
+
+.DisplayArea{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    padding: 7% 0;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.side{
+    flex-direction: column;
+    flex-basis: 20%;
+}
+
+.theList{
+    list-style: none; 
+    text-align: left;
+    font-weight: 500; 
+    font-size: 1.3em; 
+    line-height: 200%;
+}
+
+.SkaterDisplay{
+    flex-direction: column;
+    flex-basis: 80%;
 }
