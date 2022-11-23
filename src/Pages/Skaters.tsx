@@ -3,7 +3,7 @@ import search from '../Images/search.png'
 import skaters from '../data/SkaterBase'
 import DisplaySkaters from '../Components/DisplaySkaters'
 import  '../Pages/PageCSS/SkatersStyles.css'
-import { useState } from "react"
+import React, { useState } from "react"
 
 interface IPropsSkaters {
     navColor: boolean
@@ -22,9 +22,16 @@ const Skaters = (props: IPropsSkaters) => {
         setSkaterList(skaters.filter((sk8r) => sk8r.category === category))
     }
 
-    function goSearch(){
+    function goSearch( ){
         console.log(searched)
         setSkaterList(skaters.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
+    }
+
+    function handleEnter(event: React.KeyboardEvent<HTMLImageElement>){
+        console.log("here")
+        if (event.key === 'Enter') {
+            setSkaterList(skaters.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
+          }
     }
 
     return (
@@ -42,7 +49,7 @@ const Skaters = (props: IPropsSkaters) => {
                     <div className="first">
                        <img className="magnify" onClick={() => goSearch()} src={search} alt="" /> 
                     </div>
-                    <div className="second">
+                    <div className="second" onKeyPress={handleEnter}>
                         <input className="inputBar" onChange={(e) => setSearched(e.target.value)} placeholder=' Type Here...' />
                     </div>
                 </div>
@@ -53,17 +60,17 @@ const Skaters = (props: IPropsSkaters) => {
 
                 <div className="side">
                     <ul className="theList">
-                        <li className={clicked === "Mens" ? "active" : ""} onClick={(e) => filterCat("Mens")}>Mens</li>
-                        <li className={clicked === "Womens" ? "active" : ""} onClick={(e) => filterCat("Womens")}>Womens</li>
-                        <li className={clicked === "Pairs" ? "active" : ""} onClick={(e) => filterCat("Pairs")}>Pairs</li>
-                        <li className={clicked === "Ice Dance" ? "active" : ""} onClick={(e) => filterCat("Ice Dance")}>Ice Dance</li>
+                        <li className={clicked === "Mens" ? "active men" : "men"} onClick={(e) => filterCat("Mens")}>Mens</li>
+                        <li className={clicked === "Womens" ? "active women" : "women"} onClick={(e) => filterCat("Womens")}>Womens</li>
+                        <li className={clicked === "Pairs" ? "active pair" : "pair"} onClick={(e) => filterCat("Pairs")}>Pairs</li>
+                        <li className={clicked === "Ice Dance" ? "active dance" : "dance"} onClick={(e) => filterCat("Ice Dance")}>Ice Dance</li>
                     </ul>
                 </div>
 
                 <div className="SkaterDisplay">
                    <DisplaySkaters skaters={skaterList}/>
                 </div>
-                
+
             </div>
 
         </motion.div>

@@ -76,3 +76,28 @@
     flex-direction: column;
     flex-basis: 80%;
 }
+
+.skatePic:hover{
+    transform: scale(1.05);
+    color:#5ea6eb;
+}
+
+.men:hover{
+    transform: scale(1.05);
+    color:#5ea6eb;
+}
+
+.women:hover{
+    transform: scale(1.05);
+    color:#5ea6eb;
+}
+
+.pair:hover{
+    transform: scale(1.05);
+    color:#5ea6eb;
+}
+
+.dance:hover{
+    transform: scale(1.05);
+    color:#5ea6eb;
+}
