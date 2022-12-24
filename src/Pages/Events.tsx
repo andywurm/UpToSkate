@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import event from '../data/EventBase';
 
 interface IPropsEvents {
     navColor: boolean
@@ -6,6 +8,8 @@ interface IPropsEvents {
 }
 
 const Events = (props: IPropsEvents) => {
+    const [eventList, setEventList] = useState(event)
+    console.log(eventList)
     props.setNavColor(true)
     return (
         <motion.div
