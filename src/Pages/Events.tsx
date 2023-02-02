@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import DisplayEvents from "../Components/DisplayEvents";
 import event from '../data/EventBase';
 
 interface IPropsEvents {
@@ -10,7 +11,7 @@ interface IPropsEvents {
 const Events = (props: IPropsEvents) => {
     const [eventList, setEventList] = useState(event)
     console.log(eventList)
-    props.setNavColor(true)
+    props.setNavColor(false)
     return (
         <motion.div
 
@@ -18,7 +19,9 @@ const Events = (props: IPropsEvents) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
 
-        >Events</motion.div>
+        >
+            <DisplayEvents event={eventList}/>
+        </motion.div>
     )
 }
 export default Events;

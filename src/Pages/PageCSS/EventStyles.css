@@ -1,0 +1,15 @@
+.eventBorder{
+    /* border: solid red 1px; */
+    width: 65%;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+.inner{
+    border: solid blue 1px;
+}
+
+.image{
+    height: 120px;
+    width: 120px;
+}
