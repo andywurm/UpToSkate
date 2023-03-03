@@ -1,6 +1,7 @@
 import HomePic from '../Images/HomePic.jpg'
 import '../Pages/PageCSS/HomeStyles.css'
 import { motion } from 'framer-motion'
+import {useEffect, useState} from 'react'
 
 interface IPropsHome {
     navColor: boolean
@@ -8,6 +9,16 @@ interface IPropsHome {
 }
 
 const Home = (props: IPropsHome) => {
+
+    const [test, setTest] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:5000/api")
+        .then(res => res.json())
+        .then(data => setTest(data))
+    }, [])
+
+    console.log(test)
 
     props.setNavColor(false)
     
