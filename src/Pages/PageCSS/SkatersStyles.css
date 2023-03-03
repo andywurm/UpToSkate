@@ -101,3 +101,12 @@
     transform: scale(1.05);
     color:#5ea6eb;
 }
+
+.all:hover{
+    transform: scale(1.05);
+    color:#5ea6eb;
+}
+
+.all{
+    margin-bottom: 20px;
+}

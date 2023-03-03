@@ -6,6 +6,10 @@ interface IPropsEvents{
 }
 
 const DisplayEvents = (props : IPropsEvents) => {
+
+    function handleClick(clicked : Event ){
+        console.log(clicked)
+    }
     
     return(
         <div>
@@ -31,7 +35,7 @@ const DisplayEvents = (props : IPropsEvents) => {
                             </div>
 
                             <div className="eventButton">
-                                <button>More Info</button>
+                                <button onClick={() => handleClick(e)}>More Info</button>
                             </div>
     
                         </div>

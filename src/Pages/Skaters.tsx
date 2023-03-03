@@ -18,8 +18,14 @@ const Skaters = (props: IPropsSkaters) => {
     props.setNavColor(true)
 
     function filterCat(category : string){
-        setClicked(category)
-        setSkaterList(skaters.filter((sk8r) => sk8r.category === category))
+        if(category !== "All Skaters"){
+            setClicked(category)
+            setSkaterList(skaters.filter((sk8r) => sk8r.category === category))
+        }
+        else {
+            setSkaterList(skaters)
+            setClicked("")
+        }
     }
 
     function goSearch( ){
@@ -60,6 +66,9 @@ const Skaters = (props: IPropsSkaters) => {
 
                 <div className="side">
                     <ul className="theList">
+                        {clicked !== "" ? 
+                        <li className={clicked === "All Skaters" ? "active all" : "all"} onClick={(e) => filterCat("All Skaters")}>Show All</li>
+                        : null}
                         <li className={clicked === "Mens" ? "active men" : "men"} onClick={(e) => filterCat("Mens")}>Mens</li>
                         <li className={clicked === "Womens" ? "active women" : "women"} onClick={(e) => filterCat("Womens")}>Womens</li>
                         <li className={clicked === "Pairs" ? "active pair" : "pair"} onClick={(e) => filterCat("Pairs")}>Pairs</li>
