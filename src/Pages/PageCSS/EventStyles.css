@@ -2,14 +2,75 @@
     /* border: solid red 1px; */
     width: 65%;
     margin: 0 auto;
-    padding: 1%;
+    margin-bottom: 30px;
 }
 
-.inner{
-    border: solid blue 1px;
+.eventBorder2{
+    /* border: solid red 1px; */
+    padding: 1.5%;
+}
+
+.eventPageTitle{
+    font-weight: 500;
+    font-size: 1.9em;
+    text-align: left;
+    margin-left: 10px ;
+    padding: 15px;
 }
 
 .image{
-    height: 120px;
-    width: 120px;
+    height: 130px;
+    width: 130px;
+}
+
+.inner{
+    border: solid rgb(67, 124, 160) 1px;
+    box-shadow: 1px 2px 3px #888888;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    background-color:#fafafad3;
+}
+
+.eventInfo{
+    /* border: solid red 1px; */
+    flex-direction: row;
+    flex-basis: 60%;
+    text-align: left;
+}
+
+.eventImage{
+    /* border: solid red 1px; */
+    flex-direction: column;
+    flex-basis: 30%;
+    margin: 0 auto;
+}
+
+.eventButton{
+    /* border: solid red 1px; */
+    flex-direction: column;
+    flex-basis: 30%;
+}
+
+.eventName{
+    font-weight: 500;
+    font-size: 1.5em;
+    padding-bottom: 2%;
+}
+
+.otherInfo{
+    text-align: bottom;
+}
+
+button{
+    color:white;
+    background-color: #2CA9EF;
+    border: solid #1f8ece 1px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: .9em;
+}
+
+button:hover{
+    transform: scale(1.1);
 }
