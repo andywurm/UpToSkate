@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DisplayEvents from "../Components/DisplayEvents";
 import event from '../data/EventBase';
 
@@ -9,9 +9,17 @@ interface IPropsEvents {
 }
 
 const Events = (props: IPropsEvents) => {
+
     const [eventList, setEventList] = useState(event)
     console.log(eventList)
     props.setNavColor(false)
+
+    useEffect(() => {
+        fetch("http://localhost:5000/events")
+        .then(res => res.json())
+        .then(data => console.log(data))
+    },[])
+
     return (
         <motion.div
 

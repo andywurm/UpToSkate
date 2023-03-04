@@ -1,15 +1,15 @@
-export interface Event{
-    event: string
-    date: string
-    img: string
-    location: string
-    topMen: string []
-    topWomen: string []
-    topPairs: string []
-    topDancers: string []
-}
+// export interface Event{
+//     event: string
+//     date: string
+//     img: string
+//     location: string
+//     topMen: string []
+//     topWomen: string []
+//     topPairs: string []
+//     topDancers: string []
+// }
 
-const event: Event[] = [
+const event = [
     {
         event: 'Grand Prix: Skate America',
         date: 'October 21-23, 2022',
@@ -82,4 +82,6 @@ const event: Event[] = [
     },
         
 ]
-export default event
+
+// export default event;
+module.exports = event;

@@ -3,7 +3,7 @@ import search from '../Images/search.png'
 import skaters from '../data/SkaterBase'
 import DisplaySkaters from '../Components/DisplaySkaters'
 import  '../Pages/PageCSS/SkatersStyles.css'
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 interface IPropsSkaters {
     navColor: boolean
@@ -16,6 +16,12 @@ const Skaters = (props: IPropsSkaters) => {
     const [clicked, setClicked] = useState("");
     const [searched, setSearched] = useState("")
     props.setNavColor(true)
+
+    useEffect(() => {
+        fetch("http://localhost:5000/skaters")
+        .then(res => res.json())
+        .then(data => console.log(data))
+    },[])
 
     function filterCat(category : string){
         if(category !== "All Skaters"){
