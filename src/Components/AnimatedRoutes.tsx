@@ -20,7 +20,7 @@ const AnimatedRoutes = (props : IPropsAnimatedRoutes) => {
                 <Route path="/Skaters" element={<Skaters navColor={props.navColor} setNavColor={props.setNavColor}/>} />
                 <Route path="/Events" element={<Events navColor={props.navColor} setNavColor={props.setNavColor}/>} />
                 <Route path="/Results" element={<Results navColor={props.navColor} setNavColor={props.setNavColor}/>} />
-                <Route path="/Media" element={<Media />} />
+                <Route path="/Media" element={<Media navColor={props.navColor} setNavColor={props.setNavColor}/>} />
             </Routes>
         </AnimatePresence>
     )

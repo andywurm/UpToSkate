@@ -1,7 +1,19 @@
 import { motion } from "framer-motion";
-// https://mui.com/material-ui/react-image-list/
+import { ImageList, ImageListItem } from "@mui/material"
+import test from "../Images/HomePic.jpg"
+import media from '../data/MediaBase'
+import { useState } from "react";
 
-const Media = () => {
+interface IPropsMedia {
+    navColor: boolean
+    setNavColor: Function
+}
+
+const Media = (props: IPropsMedia) => {
+
+    const [mediaList, setMediaList] = useState(media)
+    props.setNavColor(false)
+
     return (
         <motion.div
 
@@ -9,7 +21,20 @@ const Media = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
 
-        >Media</motion.div>
+        >
+            <div style={{ padding: "2%", margin: "0 auto" }}>
+                <ImageList variant="masonry" cols={3} gap={8} sx={{ width: "0 auto", height: "100%" }} >
+
+                    {mediaList.map(picture => {
+                        return (
+                            <ImageListItem>
+                                <img src={`./../GalleryImg/${picture.mediaName}.png`} alt={'skaters'} />
+                            </ImageListItem>
+                        )
+                    })}
+                </ImageList>
+            </div>
+        </motion.div>
     )
 }
 export default Media;
