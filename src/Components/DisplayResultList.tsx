@@ -1,12 +1,11 @@
 import { Event } from '../data/EventBase';
 import '../Pages/PageCSS/EventStyles.css'
-import { Stack } from '@mui/material'
 
 interface IPropsEvents {
     event: Event[]
 }
 
-const DisplayEvents = (props: IPropsEvents) => {
+const DisplayResultList = (props: IPropsEvents) => {
 
     function handleClick(clicked: Event) {
         console.log(clicked)
@@ -16,12 +15,12 @@ const DisplayEvents = (props: IPropsEvents) => {
         <div>
 
             <div className="eventBorder">
-                <div className="eventPageTitle"> Upcoming Events</div>
+                <div className="eventPageTitle">Past Competitions</div>
 
                 {props.event.map((e) => {
                     return (
                         <div className="eventBorder2">
-                            
+
                             <div className='inner'>
 
                                 <div className="eventImage">
@@ -37,15 +36,15 @@ const DisplayEvents = (props: IPropsEvents) => {
                                 </div>
 
                                 <div className="eventButton">
-                                    <button onClick={() => handleClick(e)}>More Info</button>
+                                    <button onClick={() => handleClick(e)}>Get Scores</button>
                                 </div>
 
                             </div>
-                           
+
                         </div>)
                 })}
             </div>
         </div>
     )
 }
-export default DisplayEvents;
+export default DisplayResultList;

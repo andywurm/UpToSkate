@@ -28,7 +28,7 @@ const Events = (props: IPropsEvents) => {
             exit={{ opacity: 0 }}
 
         >
-            <DisplayEvents event={eventList}/>
+            <DisplayEvents event={eventList.filter(e => e.status === 'Future')}/>
         </motion.div>
     )
 }
