@@ -38,6 +38,18 @@ const media: Media[] = [
     },
     {
         mediaName: 'Gallery12'
+    },
+    {
+        mediaName: 'Gallery13'
+    },
+    {
+        mediaName: 'Gallery14'
+    },
+    {
+        mediaName: 'Gallery15'
+    },
+    {
+        mediaName: 'Gallery16'
     }
 ]
 

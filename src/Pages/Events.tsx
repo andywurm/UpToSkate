@@ -6,6 +6,8 @@ import event from '../data/EventBase';
 interface IPropsEvents {
     navColor: boolean
     setNavColor: Function
+    eventInformation: object
+    setEventInformation: Function
 }
 
 const Events = (props: IPropsEvents) => {
@@ -28,7 +30,7 @@ const Events = (props: IPropsEvents) => {
             exit={{ opacity: 0 }}
 
         >
-            <DisplayEvents event={eventList}/>
+            <DisplayEvents event={eventList.filter(e => e.status === 'Future')} eventInformation={props.eventInformation} setEventInformation={props.setEventInformation}/>
         </motion.div>
     )
 }

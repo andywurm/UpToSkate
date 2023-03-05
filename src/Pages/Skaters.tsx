@@ -2,12 +2,14 @@ import { motion } from "framer-motion"
 import search from '../Images/search.png'
 import skaters from '../data/SkaterBase'
 import DisplaySkaters from '../Components/DisplaySkaters'
-import  '../Pages/PageCSS/SkatersStyles.css'
+import '../Pages/PageCSS/SkatersStyles.css'
 import React, { useEffect, useState } from "react"
 
 interface IPropsSkaters {
     navColor: boolean
     setNavColor: Function
+    skaterPerson: object
+    setSkaterPerson: Function
 }
 
 const Skaters = (props: IPropsSkaters) => {
@@ -19,12 +21,12 @@ const Skaters = (props: IPropsSkaters) => {
 
     useEffect(() => {
         fetch("http://localhost:5000/skaters")
-        .then(res => res.json())
-        .then(data => console.log(data))
-    },[])
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }, [])
 
-    function filterCat(category : string){
-        if(category !== "All Skaters"){
+    function filterCat(category: string) {
+        if (category !== "All Skaters") {
             setClicked(category)
             setSkaterList(skaters.filter((sk8r) => sk8r.category === category))
         }
@@ -34,16 +36,16 @@ const Skaters = (props: IPropsSkaters) => {
         }
     }
 
-    function goSearch( ){
+    function goSearch() {
         console.log(searched)
         setSkaterList(skaters.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
     }
 
-    function handleEnter(event: React.KeyboardEvent<HTMLImageElement>){
+    function handleEnter(event: React.KeyboardEvent<HTMLImageElement>) {
         console.log("here")
         if (event.key === 'Enter') {
             setSkaterList(skaters.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
-          }
+        }
     }
 
     return (
@@ -59,7 +61,7 @@ const Skaters = (props: IPropsSkaters) => {
 
                 <div className="actualSearchArea">
                     <div className="first">
-                       <img className="magnify" onClick={() => goSearch()} src={search} alt="" /> 
+                        <img className="magnify" onClick={() => goSearch()} src={search} alt="" />
                     </div>
                     <div className="second" onKeyPress={handleEnter}>
                         <input className="inputBar" onChange={(e) => setSearched(e.target.value)} placeholder=' Type Here...' />
@@ -72,9 +74,9 @@ const Skaters = (props: IPropsSkaters) => {
 
                 <div className="side">
                     <ul className="theList">
-                        {clicked !== "" ? 
-                        <li className={clicked === "All Skaters" ? "active all" : "all"} onClick={(e) => filterCat("All Skaters")}>Show All</li>
-                        : null}
+                        {clicked !== "" ?
+                            <li className={clicked === "All Skaters" ? "active all" : "all"} onClick={(e) => filterCat("All Skaters")}>Show All</li>
+                            : null}
                         <li className={clicked === "Mens" ? "active men" : "men"} onClick={(e) => filterCat("Mens")}>Mens</li>
                         <li className={clicked === "Womens" ? "active women" : "women"} onClick={(e) => filterCat("Womens")}>Womens</li>
                         <li className={clicked === "Pairs" ? "active pair" : "pair"} onClick={(e) => filterCat("Pairs")}>Pairs</li>
@@ -83,7 +85,7 @@ const Skaters = (props: IPropsSkaters) => {
                 </div>
 
                 <div className="SkaterDisplay">
-                   <DisplaySkaters skaters={skaterList}/>
+                    <DisplaySkaters skaters={skaterList} skaterPerson={props.skaterPerson} setSkaterPerson={props.setSkaterPerson} />
                 </div>
 
             </div>

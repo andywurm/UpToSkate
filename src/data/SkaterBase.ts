@@ -147,7 +147,7 @@ const skaters: Skater[] = [
     },
     {
         name: 'Donovan Carrillo',
-        img:'DonovanCarrillo.jpg',
+        img:'DonovanCarrillo.png',
         category: 'Mens',
         country: 'Mexico',
         DOB: 'November 17, 1999',

@@ -1,15 +1,21 @@
 import { Event } from '../data/EventBase';
 import '../Pages/PageCSS/EventStyles.css'
 import { Stack } from '@mui/material'
+import { useNavigate } from 'react-router-dom';
 
 interface IPropsEvents {
     event: Event[]
+    eventInformation: object
+    setEventInformation: Function
 }
 
 const DisplayEvents = (props: IPropsEvents) => {
 
+    const navigate = useNavigate();
+    
     function handleClick(clicked: Event) {
-        console.log(clicked)
+        props.setEventInformation(clicked)
+        navigate('/EventInfo')
     }
 
     return (
@@ -21,7 +27,7 @@ const DisplayEvents = (props: IPropsEvents) => {
                 {props.event.map((e) => {
                     return (
                         <div className="eventBorder2">
-                            {/* <Stack spacing={1} style={{border: "solid red 1px"}}> */}
+                            
                             <div className='inner'>
 
                                 <div className="eventImage">
@@ -41,7 +47,7 @@ const DisplayEvents = (props: IPropsEvents) => {
                                 </div>
 
                             </div>
-                            {/* </Stack> */}
+                           
                         </div>)
                 })}
             </div>
