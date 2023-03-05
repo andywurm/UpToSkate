@@ -1,14 +1,20 @@
+import { useNavigate } from 'react-router-dom';
 import { Event } from '../data/EventBase';
 import '../Pages/PageCSS/EventStyles.css'
 
 interface IPropsEvents {
     event: Event[]
+    eventInformation: object
+    setEventInformation: Function
 }
 
 const DisplayResultList = (props: IPropsEvents) => {
 
+    const navigate = useNavigate();
+    
     function handleClick(clicked: Event) {
-        console.log(clicked)
+        props.setEventInformation(clicked)
+        navigate('/ResultInfo')
     }
 
     return (

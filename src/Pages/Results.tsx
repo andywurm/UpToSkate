@@ -6,6 +6,8 @@ import DisplayResultList from "../Components/DisplayResultList"
 interface IPropsResults {
     navColor: boolean
     setNavColor: Function
+    eventInformation: object
+    setEventInformation: Function
 }
 
 const Results = (props: IPropsResults) => {
@@ -21,7 +23,7 @@ const Results = (props: IPropsResults) => {
             exit={{ opacity: 0 }}
 
         >
-            <DisplayResultList event={eventList.filter(e => e.status === 'Past')} />
+            <DisplayResultList event={eventList.filter(e => e.status === 'Past')} eventInformation={props.eventInformation} setEventInformation={props.setEventInformation} />
         </motion.div>
     )
 }
