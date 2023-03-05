@@ -75,6 +75,11 @@
 .SkaterDisplay{
     flex-direction: column;
     flex-basis: 80%;
+    flex-wrap: wrap;
+}
+
+.skatePic{
+
 }
 
 .skatePic:hover{

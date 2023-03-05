@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ImageList, ImageListItem } from "@mui/material"
-import test from "../Images/HomePic.jpg"
 import media from '../data/MediaBase'
 import { useState } from "react";
 
@@ -13,6 +12,7 @@ const Media = (props: IPropsMedia) => {
 
     const [mediaList, setMediaList] = useState(media)
     props.setNavColor(false)
+    console.log(mediaList)
 
     return (
         <motion.div

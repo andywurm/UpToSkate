@@ -21,18 +21,17 @@ const DisplaySkaters = (props: IPropsSkaters) => {
     }
 
     return (
-        <div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 220px))", gridGap: " .4rem" }}>
             {props.skaters.map((e) => {
                 return (
                     <div className="skatePic" style={{ padding: '6px', display: 'inline-block' }} onClick={() => handleClick(e)}>
                         <Paper elevation={2}>
-                            <img src={`./../img/${e.img}`} style={{ height: '250px', width: '200px', borderRadius: '6px', padding: '3px' }} alt="" />
-                            <div style={{ padding: '10px', fontWeight: '500', fontSize: '1.2em' }}>{e.name}</div>
+                            <img src={`./../img/${e.img}`} style={{ height: '250px', width: '200px', borderRadius: '6px', padding: '3px 0' }} alt="" />
+                            <div style={{ padding: '10px', fontWeight: '500', fontSize: '1.1em' }}>{e.name}</div>
                         </Paper>
                     </div>
                 )
             })}
-
         </div>
     )
 }

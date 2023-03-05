@@ -22,11 +22,11 @@ const SkaterInfo = (props: IPropsSkaterInfo) => {
             exit={{ opacity: 0 }}
 
         >
-            <div style={{ width: "70%", margin: "0 auto"}}>
+            <div style={{ width: "70%", margin: "0 auto" }}>
                 <div className="ProfileContainer">
 
                     <div className="ProfileImg">
-                            <img src={`./../img/${props.skaterPerson.img}`} alt={'skater'} className="ProfilePic" />
+                        <img src={`./../img/${props.skaterPerson.img}`} alt={'skater'} className="ProfilePic" />
                         <div style={{ marginTop: "10px", fontSize: "1.1em" }}>
                             <b>Status</b> : {props.skaterPerson.status === 'active' ? 'Active' : 'Retired'}
                         </div>
@@ -42,6 +42,12 @@ const SkaterInfo = (props: IPropsSkaterInfo) => {
                         <div className="ProfileList">
                             <b>Country</b> : {props.skaterPerson.country}
                         </div>
+
+                        {props.skaterPerson.partner ?
+                            <div className="ProfileList">
+                                <b>Partner</b> : {props.skaterPerson.partner}
+                            </div>
+                        : null}
 
                         <div className="ProfileList">
                             <b>Date of Birth</b> : {props.skaterPerson.DOB}

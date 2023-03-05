@@ -8,10 +8,6 @@ app.use(cors())
 
 console.log(skaters)
 console.log(events)
-// const skaterbase = require('./data/skaterbase2')
-// console.log(skaterbase)
-// const eventbase = require('./data/eventbase2')
-// console.log(eventbase)
 
 app.get("/api", (req, res) => {
     res.json({ "test": ["The", "Test"] })
