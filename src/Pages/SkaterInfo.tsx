@@ -21,8 +21,10 @@ const SkaterInfo = (props: IPropsSkaterInfo) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
 
+            style={{height: "fit-content", paddingBottom:"50px"}}
+
         >
-            <div style={{ width: "70%", margin: "0 auto" }}>
+            <div style={{ width: "70%", margin: "20px auto"}}>
                 <div className="ProfileContainer">
 
                     <div className="ProfileImg">
@@ -33,11 +35,14 @@ const SkaterInfo = (props: IPropsSkaterInfo) => {
 
                     </div>
 
+
                     <div className="ProfileInfo">
 
                         <div className="ProfileName">
                             {props.skaterPerson.name}
                         </div>
+
+                        <div className="keepLeft">
 
                         <div className="ProfileList">
                             <b>Country</b> : {props.skaterPerson.country}
@@ -61,16 +66,21 @@ const SkaterInfo = (props: IPropsSkaterInfo) => {
                             <b>Personal Best</b> : {props.skaterPerson.personalBest}
                         </div>
 
-                        <div className="ProfileList">
+                        <div className="ProfileList" >
                             <b>Achievements</b> :
+                            <ul>
                             {props.skaterPerson.achievements.map(item => {
                                 return (
-                                    <div style={{ padding: "5px 0" }}>{item}</div>
+                                   <li> <div style={{ padding: " 0 0 5px 0" }}>{item}</div> </li>
                                 )
                             })}
+                            </ul>
                         </div>
+                        
 
+                        </div>
                     </div>
+                    
                 </div>
             </div>
 

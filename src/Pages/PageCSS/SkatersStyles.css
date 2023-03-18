@@ -78,10 +78,6 @@
     flex-wrap: wrap;
 }
 
-.skatePic{
-
-}
-
 .skatePic:hover{
     transform: scale(1.05);
     color:#5ea6eb;

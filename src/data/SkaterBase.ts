@@ -129,7 +129,7 @@ const skaters: Skater[] = [
         category: 'Mens',
         country: 'Latvia',
         DOB: 'August 9, 1999',
-        height: '167cm',
+        height: '176cm',
         status: 'active',
         personalBest: '201.02',
         achievements: ['2022 Skate America Bronze Medalist']

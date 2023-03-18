@@ -1,52 +1,90 @@
-
-.ProfileContainer{
+.ProfileContainer {
     display: flex;
-    height: 70vh;
-    align-items:center;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    align-items: center;
     background-color: rgba(232, 232, 232, 0.71);
     border-radius: 6px;
-    margin-top: 3%;
+    height: 70vh;
     overflow: hidden;
     /* border: solid red 1px; */
+    width: 100%;
 }
 
-.ProfileImg{
+.ProfileImg {
     /* border: solid red 1px; */
-    flex-direction: column;
-    flex-basis: 40%;
+    /* flex-direction: column; */
+    /* flex-basis: 40%; */
     height: 60%;
-    flex-wrap: wrap; 
-    padding-left: 15px;
-    /* border-right: solid rgb(156, 167, 196) 1px; */
-    /* padding-right: 50px; */
+    width: 35%;
+    /* padding-left: 15px; */
+    margin: 0 auto;
 }
 
-.ProfilePic{
+.ProfilePic {
     height: 350px;
     width: 275px;
     border-radius: 6px;
     border: solid rgb(193, 187, 187) 1px;
 }
 
-.ProfileInfo{
+.ProfileInfo {
     /* border: solid red 1px; */
-    height: 70%;
-    max-width: 100%;
-    flex-direction: column;
-    flex-basis: 60%;
-    flex-wrap: wrap; 
+    height: fit-content;
+    width: 60%;
+    margin: 0 auto;
+    /* flex-direction: column; */
+    /* flex-basis: 60%; */
     text-align: left;
-    padding: 30px 0;
+    padding: 0 0 30px 0;
     padding-left: 30px;
 }
 
-.ProfileName{
+.ProfileName {
     font-weight: 500;
     font-size: 3em;
     padding: 20px 0;
 }
 
-.ProfileList{
+.ProfileList {
     padding: 10px 0;
     font-size: 1.1em;
+}
+
+@media only screen and (max-width: 1370px) {
+    .ProfileImg {
+        height: 60%;
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .ProfileInfo {
+        /* border: solid red 1px; */
+        height: fit-content;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 30px 0;
+        padding-left: 30px;
+    }
+
+    .keepLeft{
+        text-align: left;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .ProfileContainer {
+        display: flex;
+        /* flex-direction: row; */
+        flex-wrap: wrap;
+        height: 70vh;
+        align-items: center;
+        background-color: rgba(232, 232, 232, 0.71);
+        border-radius: 6px;
+        overflow-y: scroll;
+        /* border: solid red 1px; */
+        width: 100%;
+    }
+
 }
