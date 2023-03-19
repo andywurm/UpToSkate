@@ -64,7 +64,7 @@ const Skaters = (props: IPropsSkaters) => {
                         <img className="magnify" onClick={() => goSearch()} src={search} alt="" />
                     </div>
                     <div className="second" onKeyPress={handleEnter}>
-                        <input className="inputBar" onChange={(e) => setSearched(e.target.value)} placeholder=' Type Here...' />
+                        <input className="inputBar noselect" onChange={(e) => setSearched(e.target.value)} placeholder=' Type Here...' />
                     </div>
                 </div>
 

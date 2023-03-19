@@ -111,3 +111,7 @@
 .all{
     margin-bottom: 20px;
 }
+
+input:focus{
+    outline: none;
+}
