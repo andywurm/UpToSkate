@@ -24,7 +24,7 @@ const SkaterInfo = (props: IPropsSkaterInfo) => {
             style={{height: "fit-content", paddingBottom:"50px"}}
 
         >
-            <div style={{ width: "70%", margin: "20px auto"}}>
+            <div className="outerProfile">
                 <div className="ProfileContainer">
 
                     <div className="ProfileImg">

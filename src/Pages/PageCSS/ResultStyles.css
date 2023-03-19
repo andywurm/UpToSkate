@@ -1,0 +1,85 @@
+.outsideContainer{
+    width: 70%; 
+    height: fit-content;
+    margin: 20px auto;
+    background-color: rgba(245, 245, 245, 0.158);
+    border: solid rgb(229, 229, 229) 1px;
+    border-radius: 6px;
+    box-shadow: -2px 2px 1px #6bc8f0a9;
+}
+
+.resultContainer{
+    padding: 50px 10px;
+}
+
+.displayMen, .displayWomen, .displayPair, .displayDance{
+    font-size: 1.2em;
+}
+.resultSection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.results{
+    /* border: solid red 1px; */
+    padding: 20px 0;
+    text-align: left;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+.cat{
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.rImage{
+    height: 140px;
+    width: 140px;
+    margin-right: 20px;
+}
+
+.eventRName{
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.eventRLocation{
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.gold, .silver, .bronze{
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 2px
+}
+
+.outerHeader{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+.headerInfo{
+    text-align: left
+}
+
+@media only screen and (max-width: 900px) {
+    .results{
+        /* border: solid red 1px; */
+        margin: 0 auto;
+        text-align: left;
+        /* flex-direction: column; */
+        flex-basis: 100%;
+    }
+
+    .headerImage{
+        margin: 0 auto;
+    }
+}
