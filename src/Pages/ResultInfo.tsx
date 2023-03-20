@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Event } from "../data/EventBase";
 import '../Pages/PageCSS/ResultStyles.css'
-import gold from '../Images/goldM.png'
-import silver from '../Images/silverM.png'
-import bronze from '../Images/bronzeM.png'
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 interface IPropsResultInfo {
     navColor: boolean
@@ -12,9 +14,15 @@ interface IPropsResultInfo {
     setEventInformation: Function
 }
 
+
+
 const ResultInfo = (props: IPropsResultInfo) => {
 
     props.setNavColor(false)
+    // console.log(props.eventInformation.topMen)
+    // props.eventInformation.topMen.map((person: { name: any; }) => {
+    //     console.log(person.name)
+    // })
 
     return (
         <motion.div
@@ -41,100 +49,66 @@ const ResultInfo = (props: IPropsResultInfo) => {
                         </div>
                     </div>
 
+
+
                     <div className="resultSection">
-                        <div className="results">
-                            <div className="cat">Men :</div> {props.eventInformation.topMen.map((man, i = 0) => {
-                                if (i === 0) {
-                                    return (
-                                        <div className="displayMen">
-                                            <img src={gold} alt="Gold" className="gold" /> {man}   </div>
-                                    )
-                                }
-                                else if (i === 1) {
-                                    return (
-                                        <div className="displayMen">
-                                            <img src={silver} alt="Silver" className="silver" /> {man}   </div>
-                                    )
-                                }
-                                else {
-                                    return (
-                                        <div className="displayMen">
-                                            <img src={bronze} alt="Bronze" className="bronze" /> {man}   </div>
-                                    )
-                                }
-                            })}
-                        </div>
 
-                        <div className="results">
-                            <div className="cat">Women :</div> {props.eventInformation.topWomen.map((woman, i = 0) => {
-                                if (i === 0) {
-                                    return (
-                                        <div className="displayWomen">
-                                            <img src={gold} alt="Gold" className="gold" /> {woman}   </div>
-                                    )
-                                }
-                                else if (i === 1) {
-                                    return (
-                                        <div className="displayWomen">
-                                            <img src={silver} alt="Silver" className="silver" /> {woman}  </div>
-                                    )
-                                }
-                                else {
-                                    return (
-                                        <div className="displayWomen">
-                                            <img src={bronze} alt="Bronze" className="bronze" /> {woman}   </div>
-                                    )
-                                }
-                            })}
-                        </div>
+                        <Accordion style={{width: '100%'}} defaultExpanded={true}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                            >
+                                <Typography> <div className="cat">Men</div></Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <table>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Name</th>
+                                            <th>Nation</th>
+                                            <th>Points</th>
+                                            <th>SP</th>
+                                            <th>FS</th>
+                                        </tr>
+                                      {props.eventInformation.topMen.map((person: any) => {
+                                        return(
+                                            <tr>
+                                                <td>{person.rank}</td>
+                                                <td className="sk8Name"> &nbsp;&nbsp; {person.name}</td>
+                                                <td>{person.nation}</td>
+                                                <td>{person.Points}</td>
+                                                <td>{person.sp}</td>
+                                                <td>{person.fs}</td>
+                                            </tr>
+                                        )
+                                      })}
+                                    </table>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
 
-                        <div className="results">
-                            <div className="cat">Pairs :</div>  {props.eventInformation.topPairs.map((pair, i = 0) => {
-                                if (i === 0) {
-                                    return (
-                                        <div className="displayPair">
-                                            <img src={gold} alt="Gold" className="gold" /> {pair}   </div>
-                                    )
-                                }
-                                else if (i === 1) {
-                                    return (
-                                        <div className="displayPair">
-                                            <img src={silver} alt="Silver" className="silver" /> {pair}   </div>
-                                    )
-                                }
-                                else {
-                                    return (
-                                        <div className="displayPair">
-                                            <img src={bronze} alt="Bronze" className="bronze" /> {pair}   </div>
-                                    )
-                                }
-                            })}
-                        </div>
+                        <Accordion>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel2a-content"
+                                id="panel2a-header"
+                            >
+                                <Typography>Accordion 2</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
 
-                        <div className="results">
-                            <div className="cat">Ice Dance :</div>  {props.eventInformation.topDancers.map((dancer, i = 0) => {
-                                if (i === 0) {
-                                    return (
-                                        <div className="displayDance">
-                                            <img src={gold} alt="Gold" className="gold" /> {dancer}   </div>
-                                    )
-                                }
-                                else if (i === 1) {
-                                    return (
-                                        <div className="displayDance">
-                                            <img src={silver} alt="Silver" className="silver" /> {dancer}   </div>
-                                    )
-                                }
-                                else {
-                                    return (
-                                        <div className="displayDance">
-                                            <img src={bronze} alt="Bronze" className="bronze" /> {dancer}   </div>
-                                    )
-                                }
-                            })}
-                        </div>
+
+
+
                     </div>
-
                 </div>
             </div>
         </motion.div>
