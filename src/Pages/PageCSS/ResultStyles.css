@@ -8,19 +8,31 @@
     box-shadow: -2px 2px 1px #6bc8f0a9;
 }
 
+th{
+    border: solid gray 1px;
+    width: 3%;
+}
+
+.sk8Name{
+    text-align:left;
+    width: 10%;
+}
+
+.resultSection{
+    border: solid rgb(215, 214, 214) 1px;
+    border-radius: 5px;
+}
 .resultContainer{
     padding: 50px 10px;
+    
 }
 
 .displayMen, .displayWomen, .displayPair, .displayDance{
     font-size: 1.2em;
 }
-.resultSection{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 20px;
-}
+
+
+
 .results{
     /* border: solid red 1px; */
     padding: 20px 0;
@@ -31,8 +43,7 @@
 .cat{
     font-size: 1.3em;
     font-weight: 500;
-    margin-bottom: 10px;
-    width: 50%;
+    margin-left: 10px;
 }
 
 .rImage{
@@ -62,6 +73,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 
