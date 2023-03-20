@@ -2,8 +2,8 @@
     width: 70%; 
     height: fit-content;
     margin: 20px auto;
-    background-color: rgba(245, 245, 245, 0.158);
-    border: solid rgb(229, 229, 229) 1px;
+    /* background-color: rgba(245, 245, 245, 0.158);  */
+    border: solid rgb(215, 214, 214) 1px;
     border-radius: 6px;
     box-shadow: -2px 2px 1px #6bc8f0a9;
 }
