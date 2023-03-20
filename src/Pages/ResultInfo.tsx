@@ -6,6 +6,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import React from "react";
 
 interface IPropsResultInfo {
     navColor: boolean
@@ -19,10 +20,13 @@ interface IPropsResultInfo {
 const ResultInfo = (props: IPropsResultInfo) => {
 
     props.setNavColor(false)
-    // console.log(props.eventInformation.topMen)
-    // props.eventInformation.topMen.map((person: { name: any; }) => {
-    //     console.log(person.name)
-    // })
+    const [expanded, setExpanded] = React.useState<string | false>('panel1');
+
+    const handleChange =
+        (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+            setExpanded(newExpanded ? panel : false);
+        };
+
 
     return (
         <motion.div
@@ -53,7 +57,7 @@ const ResultInfo = (props: IPropsResultInfo) => {
 
                     <div className="resultSection">
 
-                        <Accordion style={{width: '100%'}} defaultExpanded={true}>
+                        <Accordion style={{ width: '100%' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
@@ -72,40 +76,130 @@ const ResultInfo = (props: IPropsResultInfo) => {
                                             <th>SP</th>
                                             <th>FS</th>
                                         </tr>
-                                      {props.eventInformation.topMen.map((person: any) => {
-                                        return(
-                                            <tr>
-                                                <td>{person.rank}</td>
-                                                <td className="sk8Name"> &nbsp;&nbsp; {person.name}</td>
-                                                <td>{person.nation}</td>
-                                                <td>{person.Points}</td>
-                                                <td>{person.sp}</td>
-                                                <td>{person.fs}</td>
-                                            </tr>
-                                        )
-                                      })}
+                                        {props.eventInformation.topMen.map((person: any) => {
+                                            return (
+                                                <tr>
+                                                    <td>{person.rank}</td>
+                                                    <td className="sk8Name"> &nbsp;&nbsp; {person.name}</td>
+                                                    <td>{person.nation}</td>
+                                                    <td>{person.Points}</td>
+                                                    <td>{person.sp}</td>
+                                                    <td>{person.fs}</td>
+                                                </tr>
+                                            )
+                                        })}
                                     </table>
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
 
-                        <Accordion>
+                        <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel2a-content"
                                 id="panel2a-header"
                             >
-                                <Typography>Accordion 2</Typography>
+                                <Typography><div className="cat">Women</div></Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                    <table>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Name</th>
+                                            <th>Nation</th>
+                                            <th>Points</th>
+                                            <th>SP</th>
+                                            <th>FS</th>
+                                        </tr>
+                                        {props.eventInformation.topWomen.map((person: any) => {
+                                            return (
+                                                <tr>
+                                                    <td>{person.rank}</td>
+                                                    <td className="sk8Name"> &nbsp;&nbsp; {person.name}</td>
+                                                    <td>{person.nation}</td>
+                                                    <td>{person.Points}</td>
+                                                    <td>{person.sp}</td>
+                                                    <td>{person.fs}</td>
+                                                </tr>
+                                            )
+                                        })}
+                                    </table>
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
 
+                        <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel3a-content"
+                                id="panel3a-header"
+                            >
+                                <Typography><div className="cat">Pairs</div></Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <table>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Name</th>
+                                            <th>Nation</th>
+                                            <th>Points</th>
+                                            <th>SP</th>
+                                            <th>FS</th>
+                                        </tr>
+                                        {props.eventInformation.topPairs.map((person: any) => {
+                                            return (
+                                                <tr>
+                                                    <td>{person.rank}</td>
+                                                    <td className="sk8Name"> &nbsp;&nbsp; {person.name}</td>
+                                                    <td>{person.nation}</td>
+                                                    <td>{person.Points}</td>
+                                                    <td>{person.sp}</td>
+                                                    <td>{person.fs}</td>
+                                                </tr>
+                                            )
+                                        })}
+                                    </table>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
 
+                        <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel4a-content"
+                                id="panel4a-header"
+                            >
+                                <Typography><div className="cat">Ice Dance</div></Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    <table>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Name</th>
+                                            <th>Nation</th>
+                                            <th>Points</th>
+                                            <th>SP</th>
+                                            <th>FS</th>
+                                        </tr>
+                                        {props.eventInformation.topDancers.map((person: any) => {
+                                            return (
+                                                <tr>
+                                                    <td>{person.rank}</td>
+                                                    <td className="sk8Name"> &nbsp;&nbsp; {person.name}</td>
+                                                    <td>{person.nation}</td>
+                                                    <td>{person.Points}</td>
+                                                    <td>{person.sp}</td>
+                                                    <td>{person.fs}</td>
+                                                </tr>
+                                            )
+                                        })}
+                                    </table>
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
 
 
                     </div>
