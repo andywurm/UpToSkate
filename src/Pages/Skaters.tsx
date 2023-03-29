@@ -19,11 +19,11 @@ const Skaters = (props: IPropsSkaters) => {
     const [searched, setSearched] = useState("")
     props.setNavColor(true)
 
-    useEffect(() => {
-        fetch("http://localhost:5000/skaters")
-            .then(res => res.json())
-            .then(data => console.log(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch("http://localhost:5000/skaters")
+    //         .then(res => res.json())
+    //         .then(data => console.log(data))
+    // }, [])
 
     function filterCat(category: string) {
         if (category !== "All Skaters") {
