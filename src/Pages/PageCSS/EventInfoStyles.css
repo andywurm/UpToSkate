@@ -1,0 +1,56 @@
+.outsideEventInfo{
+   /* border: solid red 1px; */
+   height: 70vh;
+}
+
+.EventInfo{
+    border: solid rgb(143, 143, 143) 1px;
+    border-radius: 4px;
+    width: 75%;
+    height: fit-content;
+    margin: 40px auto;
+}
+
+.eventInformation{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    align-items: center;
+}
+
+.eventImg{
+    flex-direction: column;
+}
+
+.eventIm{
+    height: 120px;
+    width: 120px;
+    border: solid rgb(143, 143, 143) 1px;
+    margin-right: 20px;
+    border-radius: 4px;
+}
+
+.eventSpecifics{
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+}
+
+.eventInfoName{
+    font-size: 2.1em;
+    font-weight: 500;
+}
+
+.eventInfoLocation, .eventInfoDate{
+    font-size: 1.1em;
+    color: rgb(59, 59, 59);
+    margin-top: 5px;
+}
+
+.eventInfoText{
+    text-align: left;
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+

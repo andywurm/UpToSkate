@@ -14,11 +14,11 @@ app.get("/api", (req, res) => {
 })
 
 app.get("/skaters", (req, res) => {
-    res.json(({ "skaters": ["Shoma Uno", "Evgenia Medvedeva"] }))
+    res.json((skaters))
 })
 
 app.get("/events", (req, res) => {
-    res.json(({ "events": ["Skate America", "Grand Prix Final"] }))
+    res.json((events))
 })
 
 app.listen(5000, () => { console.log("Server started on port 5000") })

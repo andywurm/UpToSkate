@@ -390,14 +390,10 @@ const event: Event[] = [
         date: 'February 7-12, 2023',
         img: '4CC.png',
         location: 'Colorado Springs, USA',
-        topMen: [
-            {name: 'Ilia Malinin',rank: '1',nation: 'USA',Points: '280.37',sp: '4',fs: '1'}, 
-            {name: 'Kao Miura',rank: '2',nation: 'JPN',Points: '273.19',sp: '1',fs: '2'}, 
-            {name: 'Junhwan Cha',rank: '3',nation: 'KOR',Points: '264.05',sp: '2',fs: '3'}, 
-        ],
-        topWomen: ['Lee Hae-in','Yelim Kim','Mone Chiba'],
-        topPairs: ['Riku Miura & Ryuichi Kihara', 'Emily Chan & Spencer Akira Howe','Deanna Stellato-Dudek & Maxime Deschamps',],
-        topDancers: ['Madison Chock & Evan Bates','Laurence Fornier Beaudry & Nikolaj Sorensen', 'Majorie Lajoie & Zachary Lagha'],
+        topMen: ['Ilia Malinin'],
+        topWomen: ['Hae-in Lee'],
+        topPairs: ['Riku Miura & Ryuichi Kihara'],
+        topDancers: ['Madison Chock & Evan Bates'],
         status: 'Future'
     },
     {
@@ -405,10 +401,10 @@ const event: Event[] = [
         date: 'March 20-26, 2023',
         img: 'Worlds.png',
         location: 'Saitama, Japan',
-        topMen: ['Unknown'],
-        topWomen: ['Unknown'],
-        topPairs: ['Unknown'],
-        topDancers: ['Unknown'],
+        topMen: ['Shoma Uno'],
+        topWomen: ['Kaori Sakamoto'],
+        topPairs: ['Riku Miura & Ryuichi Kihara'],
+        topDancers: ['Piper Gilles & Paul Poirier '],
         status: 'Future'
     }
         
