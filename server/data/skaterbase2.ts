@@ -88,7 +88,7 @@ const skaters: Skater[] = [
         height: '178cm',
         status: 'active',
         personalBest: '282.38',
-        achievements: ['2022 Skate America Bronze Medalist']
+        achievements: ['2022 Skate America Bronze Medalist', '2023 Worlds Silver Medalist']
     },
     {
         name: 'Kaori Sakamoto',
@@ -129,7 +129,7 @@ const skaters: Skater[] = [
         category: 'Mens',
         country: 'Latvia',
         DOB: 'August 9, 1999',
-        height: '167cm',
+        height: '176cm',
         status: 'active',
         personalBest: '201.02',
         achievements: ['2022 Skate America Bronze Medalist']
@@ -147,7 +147,7 @@ const skaters: Skater[] = [
     },
     {
         name: 'Donovan Carrillo',
-        img:'DonovanCarrillo.jpg',
+        img:'DonovanCarrillo.png',
         category: 'Mens',
         country: 'Mexico',
         DOB: 'November 17, 1999',
@@ -191,28 +191,28 @@ const skaters: Skater[] = [
         achievements: ['2022 Olympic Bronze Medalist', '2022 Worlds Silver Medalist']
     },
     {
-        name: 'Alexandra Stepanova',
-        img:'AlexandraStepanova.jpg',
-        partner: 'Ivan Bukin',
+        name: 'Charlene Guignard',
+        img:'CharleneGuignard.jpg',
+        partner: 'Marco Fabbri',
         category: 'Ice Dance',
-        country: 'Russia',
-        DOB: 'August 18, 1995',
-        height: '170cm',
+        country: 'Italy',
+        DOB: 'December 8, 1989',
+        height: '161cm',
         status: 'active',
-        personalBest: '213.20',
-        achievements: ['2022 European Silver Medalist']
+        personalBest: '219.85',
+        achievements: ['2023 Europeans Gold Medalist', '2023 Worlds Silver Medalist']
     },
     {
-        name: 'Ivan Bukin',
-        img:'IvanBukin.jpg',
-        partner: 'Alexandra Stepanova',
+        name: 'Marco Fabbri',
+        img:'MarcoFabbri.jpg',
+        partner: 'Charlene Guignard',
         category: 'Ice Dance',
-        country: 'Russia',
-        DOB: 'September 16, 1993',
-        height: '182cm',
+        country: 'Italy',
+        DOB: 'February 2, 1988',
+        height: '165cm',
         status: 'active',
-        personalBest: '213.20',
-        achievements: ['2022 European Silver Medalist']
+        personalBest: '219.85',
+        achievements: ['2023 Europeans Gold Medalist', '2023 Worlds Silver Medalist']
     },
     {
         name: 'Piper Gilles',
@@ -263,76 +263,76 @@ const skaters: Skater[] = [
         achievements: ['2018 Olympic Bronze Medalist']
     },
     {
-        name: 'Gabriella Papadakis',
-        img:'GabriellaPapadakis.jpg',
-        partner: 'Guillaume Cizeron',
+        name: 'Lilah Fear',
+        img:'LilahFear.jpg',
+        partner: 'Lewis Gibson',
         category: 'Ice Dance',
-        country: 'France',
-        DOB: 'May 10, 1995',
-        height: '166cm',
-        status: 'active',
-        personalBest: '229.82',
-        achievements: ['2018 Olympic Silver Medalist', '2022 Olympic Gold Medalist']
-    },
-    {
-        name: 'Guillaume Cizeron',
-        img:'GuillaumeCizeron.jpg',
-        partner: 'Gabriella Papadakis',
-        category: 'Ice Dance',
-        country: 'France',
-        DOB: 'November 12, 1994',
-        height: '186cm',
-        status: 'active',
-        personalBest: '229.82',
-        achievements: ['2018 Olympic Silver Medalist', '2022 Olympic Gold Medalist']
-    },
-    {
-        name: 'Cheng Peng',
-        img:'ChengPeng.jpg',
-        partner: 'Jin Yang',
-        category: 'Pairs',
-        country: 'China',
-        DOB: 'April 23, 1997',
+        country: 'Great Britain',
+        DOB: 'November 6, 1999',
         height: '160cm',
         status: 'active',
-        personalBest: '216.90',
-        achievements: ['2018 Grad Prix Final Silver Medalist']
+        personalBest: '214.73',
+        achievements: ['2023 Europeans Silver Medalist']
     },
     {
-        name: 'Yang Jin',
-        img:'YangJin.jpg',
-        partner: 'Cheng Peng',
-        category: 'Pairs',
-        country: 'China',
-        DOB: 'May 16, 1994',
-        height: '182cm',
+        name: 'Lewis Gibson',
+        img:'LewisGibson.jpg',
+        partner: 'Lilah Fear',
+        category: 'Ice Dance',
+        country: 'Great Britain',
+        DOB: 'January 5, 1994',
+        height: '175cm',
         status: 'active',
-        personalBest: '216.90',
-        achievements: ['2018 Grad Prix Final Silver Medalist']
+        personalBest: '214.73',
+        achievements: ['2023 Europeans Silver Medalist']
     },
     {
-        name: 'Aleksandra Boikova',
-        img:'AlexandraBoikova.jpg',
-        partner: 'Dimitri Kozlovskii',
+        name: 'Sara Conti',
+        img:'SaraConti.jpg',
+        partner: 'Niccolo Macii',
         category: 'Pairs',
-        country: 'Russia',
-        DOB: 'January 20, 2002',
+        country: 'Italy',
+        DOB: 'February 8, 2000',
         height: '164cm',
         status: 'active',
-        personalBest: '234.58',
-        achievements: ['2020 European Gold Medalist']
+        personalBest: '208.08',
+        achievements: ['2023 Europeans Gold Medalist', '2023 Worlds Bronze Medalist']
     },
     {
-        name: 'Dimitri Kozlovskii',
-        img:'DimitriKozlovskii.jpg',
-        partner: 'Aleksandra Boikova',
+        name: 'Niccolo Macii',
+        img:'NiccoloMacii.jpg',
+        partner: 'Sara Conti',
         category: 'Pairs',
-        country: 'Russia',
-        DOB: 'December 23, 1999',
-        height: '185cm',
+        country: 'Italy',
+        DOB: 'October 18, 1995',
+        height: '186cm',
         status: 'active',
-        personalBest: '234.58',
-        achievements: ['2020 European Gold Medalist']
+        personalBest: '208.08',
+        achievements: ['2023 Europeans Gold Medalist', '2023 Worlds Bronze Medalist']
+    },
+    {
+        name: 'Riku Miura',
+        img:'RikuMiura.jpg',
+        partner: 'Ryuichi Kihara',
+        category: 'Pairs',
+        country: 'Japan',
+        DOB: 'December 17, 2001',
+        height: '146cm',
+        status: 'active',
+        personalBest: '222.16',
+        achievements: ['2023 Worlds Gold Medalist', '2022 Grand Prix Final Gold Medalist']
+    },
+    {
+        name: 'Ryuichi Kihara',
+        img:'RyuichiKihara.jpg',
+        partner: 'Riku Miura',
+        category: 'Pairs',
+        country: 'Japan',
+        DOB: 'August 22, 1992',
+        height: '174cm',
+        status: 'active',
+        personalBest: '222.16',
+        achievements: ['2023 Worlds Gold Medalist', '2022 Grand Prix Final Gold Medalist']
     },
     {
         name: 'Alexa Knierim',
@@ -357,6 +357,28 @@ const skaters: Skater[] = [
         status: 'active',
         personalBest: '221.09',
         achievements: ['2022 Worlds Gold Medalist']
+    },
+    {
+        name: 'Haein Lee',
+        img:'Hae-inLee.jpg',
+        category: 'Womens',
+        country: 'Korea',
+        DOB: 'April 16, 2005',
+        height: '164cm',
+        status: 'active',
+        personalBest: '220.94',
+        achievements: ['2023 Four Continents Gold Medalist', '2023 Worlds Silver Medalist']
+    },
+    {
+        name: 'Ilia Malinin',
+        img:'IliaMalinin.jpg',
+        category: 'Mens',
+        country: 'United States',
+        DOB: 'December 2, 2004',
+        height: '168cm',
+        status: 'active',
+        personalBest: '288.44',
+        achievements: ['2023 Four Continents Gold Medalist', '2023 Worlds Bronze Medalist']
     },
 ]
 
