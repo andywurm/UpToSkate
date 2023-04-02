@@ -34,8 +34,6 @@ class Events extends Model<EventsAttributes> implements EventsAttributes {
     public topDancers!: ScoresAttributes[];
     public status: string;
 
-    public readonly createdAt!: Date;
-    public readonly updatedAt!: Date;
 }
 
 Events.init(

@@ -29,18 +29,18 @@ app.get("/skaters", (req, res) => {
 })
 
 app.get("/events", async (req, res) => {
-    const waiting = await eventController.getEvents()
-    res.json(waiting) 
+    const allEvents = await eventController.getEvents()
+    res.json(allEvents) 
 })
 
 app.get("/events/past", async (req, res) => {
-    const waiting = await eventController.getEventsByStatus('Past')
-    res.json(waiting) 
+    const pastEvents = await eventController.getEventsByStatus('Past')
+    res.json(pastEvents) 
 })
 
 app.get("/events/future", async (req, res) => {
-    const waiting = await eventController.getEventsByStatus('Future')
-    res.json(waiting) 
+    const futureEvents = await eventController.getEventsByStatus('Future')
+    res.json(futureEvents) 
 })
 
 app.listen(5000, () => { console.log("Server started on port 5000") })
