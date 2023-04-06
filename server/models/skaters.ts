@@ -1,9 +1,37 @@
-const { Model } = require('sequelize');
+import db from ".";
+import { DataTypes, Model } from "sequelize";
 
-module.exports = (sequelize, DataTypes) => {
-    class Skater extends Model { }
 
-    Skater.init({
+export interface SkatersAttributes {
+    name: string
+    img: string
+    category: string
+    partner?: string
+    country: string
+    DOB: string
+    height: string,
+    status: string
+    personalBest: string,
+    achievements: string[]
+}
+
+
+class Skaters extends Model<SkatersAttributes> implements SkatersAttributes {
+    public name!: string
+    public img: string
+    public category!: string
+    public partner!: string
+    public country!: string
+    public DOB!: string
+    public height!: string
+    public status!: string
+    public personalBest!: string
+    public achievements!: string[]
+
+}
+
+Skaters.init(
+    {
         name: {
             type: DataTypes.STRING
         },
@@ -14,8 +42,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         },
         partner: {
-            type: DataTypes.STRING,
-            allowNull: true
+            type: DataTypes.STRING
         },
         country: {
             type: DataTypes.STRING
@@ -32,12 +59,15 @@ module.exports = (sequelize, DataTypes) => {
         personalBest: {
             type: DataTypes.STRING
         },
-        achievements: {
+        achievements:{
             type: DataTypes.ARRAY(DataTypes.STRING)
         }
-    }, {
-        sequelize,
+    },
+    {
+        sequelize: db,
         modelName: 'skaters'
-    })
+       
+    }
+);
 
-}
+export default Skaters;
