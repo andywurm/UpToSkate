@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import search from '../Images/search.png'
-import skaters from '../data/SkaterBase'
+import { Skater } from '../data/SkaterBase'
 import DisplaySkaters from '../Components/DisplaySkaters'
 import '../Pages/PageCSS/SkatersStyles.css'
 import React, { useEffect, useState } from "react"
@@ -14,37 +14,36 @@ interface IPropsSkaters {
 
 const Skaters = (props: IPropsSkaters) => {
 
-    const [skaterList, setSkaterList] = useState(skaters)
+    const [skaterList, setSkaterList] = useState<Skater[]>([])
+    const [currentSkaterList, setCurrentSkaterList] = useState<Skater[]>([])
     const [clicked, setClicked] = useState("");
     const [searched, setSearched] = useState("")
     props.setNavColor(true)
 
-    // useEffect(() => {
-    //     fetch("http://localhost:5000/skaters")
-    //         .then(res => res.json())
-    //         .then(data => console.log(data))
-    // }, [])
+    useEffect(() => {
+        fetch("http://localhost:5000/skaters")
+            .then(res => res.json())
+            .then(data => setSkaterList(data))
+    }, [])
 
     function filterCat(category: string) {
         if (category !== "All Skaters") {
             setClicked(category)
-            setSkaterList(skaters.filter((sk8r) => sk8r.category === category))
+            setCurrentSkaterList(skaterList.filter((sk8r) => sk8r.category === category))
         }
         else {
-            setSkaterList(skaters)
+            setCurrentSkaterList(skaterList)
             setClicked("")
         }
     }
 
     function goSearch() {
-        console.log(searched)
-        setSkaterList(skaters.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
+        setCurrentSkaterList(skaterList.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
     }
 
     function handleEnter(event: React.KeyboardEvent<HTMLImageElement>) {
-        console.log("here")
         if (event.key === 'Enter') {
-            setSkaterList(skaters.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
+            setCurrentSkaterList(skaterList.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
         }
     }
 
@@ -85,7 +84,7 @@ const Skaters = (props: IPropsSkaters) => {
                 </div>
 
                 <div className="SkaterDisplay">
-                    <DisplaySkaters skaters={skaterList} skaterPerson={props.skaterPerson} setSkaterPerson={props.setSkaterPerson} />
+                    <DisplaySkaters skaters={currentSkaterList.length === 0 ? skaterList : currentSkaterList} skaterPerson={props.skaterPerson} setSkaterPerson={props.setSkaterPerson} />
                 </div>
 
             </div>

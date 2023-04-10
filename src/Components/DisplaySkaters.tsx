@@ -15,7 +15,6 @@ const DisplaySkaters = (props: IPropsSkaters) => {
     const navigate = useNavigate();
 
     function handleClick(person: Skater) {
-        console.log(person)
         props.setSkaterPerson(person)
         navigate("/SkaterInfo")
     }
