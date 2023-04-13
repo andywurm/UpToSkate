@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
-import event from '../data/EventBase';
+import { useState, useEffect } from "react";
 import DisplayResultList from "../Components/DisplayResultList"
 
 interface IPropsResults {
@@ -13,17 +12,23 @@ interface IPropsResults {
 const Results = (props: IPropsResults) => {
 
     props.setNavColor(false)
-    const [eventList, setEventList] = useState(event)
+    const [eventList, setEventList] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:5000/events/past")
+        .then(res => res.json())
+        .then(data => setEventList(data))
+    },[])
     
     return (
         <motion.div
 
-            initial={{ opacity: 0 }}
+            initial={{ opacity: .5 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: .5 }}
 
         >
-            <DisplayResultList event={eventList.filter(e => e.status === 'Past')} eventInformation={props.eventInformation} setEventInformation={props.setEventInformation} />
+            <DisplayResultList event={eventList} eventInformation={props.eventInformation} setEventInformation={props.setEventInformation} />
         </motion.div>
     )
 }

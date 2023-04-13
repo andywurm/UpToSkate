@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import DisplayEvents from "../Components/DisplayEvents";
-import event from '../data/EventBase';
+// import event from '../data/EventBase';
 
 interface IPropsEvents {
     navColor: boolean
@@ -12,25 +12,24 @@ interface IPropsEvents {
 
 const Events = (props: IPropsEvents) => {
 
-    const [eventList, setEventList] = useState(event)
-    console.log(eventList)
+    const [eventList, setEventList] = useState([])
     props.setNavColor(false)
 
     useEffect(() => {
-        fetch("http://localhost:5000/events")
-        .then(res => res.json())
-        .then(data => console.log(data))
-    },[])
+        fetch("http://localhost:5000/events/future")
+            .then(res => res.json())
+            .then(data => setEventList(data))
+    }, [])
 
     return (
         <motion.div
 
-            initial={{ opacity: 0 }}
+            initial={{ opacity: .5 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: .5 }}
 
         >
-            <DisplayEvents event={eventList.filter(e => e.status === 'Future')} eventInformation={props.eventInformation} setEventInformation={props.setEventInformation}/>
+            <DisplayEvents event={eventList} eventInformation={props.eventInformation} setEventInformation={props.setEventInformation} />
         </motion.div>
     )
 }
