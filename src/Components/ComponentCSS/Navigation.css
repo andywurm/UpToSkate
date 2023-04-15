@@ -1,0 +1,57 @@
+.motionDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.LogoContainer{
+    vertical-align: middle;
+    position: relative;
+    top: 10px;
+    margin-left: 20px;
+}
+
+.sk8img{
+    height: 40px;
+    width: 40px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.websiteName{
+    width: 30%;
+    font-weight: 500;
+}
+
+.websiteLink{
+    float: left;
+    text-decoration: none;
+}
+
+.topLinks{
+    width: 70%;
+    height: 100%;
+    font-size: 1.1em;
+    display: inline-block;
+}
+
+.linkContainer{
+    text-align: right; 
+    margin-right: 20px;
+}
+
+.Links, .activeLinks{
+    display: inline-block;
+    padding: 4%; 
+    text-decoration: none;
+    font-size: 1.12em;
+}
+
+.Links:hover {
+   color: rgb(78, 157, 230) !important;
+}
+
+.activeLinks:hover{
+    color: white;
+    transform: scale(1.1);
+}

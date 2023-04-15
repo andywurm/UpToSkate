@@ -23,11 +23,9 @@ const Events = (props: IPropsEvents) => {
 
     return (
         <motion.div
-
             initial={{ opacity: .5 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: .5 }}
-
         >
             <DisplayEvents event={eventList} eventInformation={props.eventInformation} setEventInformation={props.setEventInformation} />
         </motion.div>

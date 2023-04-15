@@ -42,15 +42,14 @@ const EventInfo = (props: IPropsEventInfo) => {
                     <div className="eventInfoText">
                         {props.eventInformation.event} takes place in {props.eventInformation.location} from {props.eventInformation.date}.
                         <br />
-                        Join us as we watch top skaters from all over the world compete for the gold medal. 
-                        <br/>Skaters include but are not limited to {props.eventInformation.topMen[0]}, {props.eventInformation.topWomen[0]}, {props.eventInformation.topPairs[0]}, and {props.eventInformation.topDancers[0]}.
+                        Join us as we watch top skaters from all over the world compete for the gold medal.
+                        <br />Skaters include but are not limited to {props.eventInformation.topMen[0]}, {props.eventInformation.topWomen[0]}, {props.eventInformation.topPairs[0]}, and {props.eventInformation.topDancers[0]}.
                         <br /><br />
                         Click the button below to find out more and to buy tickets!
                         <br /><br />
                         <button>Tickets</button>
                     </div>
-                    <br/><br/>
-
+                    <br /><br />
 
                 </div>
             </div>

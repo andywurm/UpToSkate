@@ -22,11 +22,9 @@ const Results = (props: IPropsResults) => {
     
     return (
         <motion.div
-
             initial={{ opacity: .5 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: .5 }}
-
         >
             <DisplayResultList event={eventList} eventInformation={props.eventInformation} setEventInformation={props.setEventInformation} />
         </motion.div>

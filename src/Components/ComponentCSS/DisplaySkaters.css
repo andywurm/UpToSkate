@@ -1,0 +1,28 @@
+.dsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 220px));
+    grid-gap: .2rem;
+}
+
+.headshot {
+    padding: 6px;
+    display: inline-block;
+}
+
+.skaterImg {
+    height: 250px;
+    width: 200px;
+    border-radius: 1px;
+    padding: 7px 0;
+}
+
+.skaterName{
+    padding: 10px; 
+    font-weight: 500; 
+    font-size: 1.1em;
+}
+
+.skatePic:hover{
+    transform: scale(1.025);
+    color:#5ea6eb;
+}

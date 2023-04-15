@@ -1,7 +1,6 @@
 import db from ".";
 import { DataTypes, Model } from "sequelize";
 
-
 export interface SkatersAttributes {
     name: string
     img: string
@@ -14,7 +13,6 @@ export interface SkatersAttributes {
     personalBest: string,
     achievements: string[]
 }
-
 
 class Skaters extends Model<SkatersAttributes> implements SkatersAttributes {
     public name!: string

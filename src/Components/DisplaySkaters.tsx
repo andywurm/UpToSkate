@@ -1,6 +1,5 @@
-import React from 'react'
 import { Skater } from '../data/SkaterBase'
-import '../Pages/PageCSS/SkatersStyles.css'
+import './ComponentCSS/DisplaySkaters.css'
 import { Paper } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
@@ -14,19 +13,19 @@ const DisplaySkaters = (props: IPropsSkaters) => {
 
     const navigate = useNavigate();
 
-    function handleClick(person: Skater) {
+    const handleClick = (person: Skater) => {
         props.setSkaterPerson(person)
         navigate("/SkaterInfo")
     }
 
     return (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 220px))", gridGap: ".2rem" }}>
+        <div className='dsContainer'>
             {props.skaters.map((e) => {
                 return (
-                    <div className="skatePic" style={{ padding: '6px', display: 'inline-block'}} onClick={() => handleClick(e)}>
+                    <div className="skatePic headshot" onClick={() => handleClick(e)}>
                         <Paper elevation={2}>
-                            <img src={`./../img/${e.img}`} style={{ height: '250px', width: '200px', borderRadius: '1px', padding: '7px 0' }} alt="" />
-                            <div style={{ padding: '10px', fontWeight: '500', fontSize: '1.1em' }}>{e.name}</div>
+                            <img src={`./../img/${e.img}`} className="skaterImg" alt="" />
+                            <div className='skaterName'>{e.name}</div>
                         </Paper>
                     </div>
                 )

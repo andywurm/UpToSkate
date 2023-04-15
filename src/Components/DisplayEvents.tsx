@@ -13,7 +13,7 @@ const DisplayEvents = (props: IPropsEvents) => {
 
     const navigate = useNavigate();
     
-    function handleClick(clicked: Event) {
+    const handleClick = (clicked: Event) => {
         props.setEventInformation(clicked)
         navigate('/EventInfo')
     }
@@ -22,6 +22,7 @@ const DisplayEvents = (props: IPropsEvents) => {
         <div>
 
             <div className="eventBorder">
+
                 <div className="eventPageTitle"> Upcoming Events</div>
 
                 {props.event.map((e) => {
@@ -50,7 +51,9 @@ const DisplayEvents = (props: IPropsEvents) => {
                            
                         </div>)
                 })}
+                
             </div>
+
         </div>
     )
 }

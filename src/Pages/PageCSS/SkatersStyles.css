@@ -32,6 +32,7 @@
     flex-direction: column; 
     flex-basis: 10%;
 }
+
 .second{
     flex-direction: column; 
     flex-basis: 90%;
@@ -78,33 +79,28 @@
     flex-wrap: wrap;
 }
 
-.skatePic:hover{
-    transform: scale(1.05);
-    color:#5ea6eb;
-}
-
 .men:hover{
-    transform: scale(1.05);
+    transform: scale(1.025);
     color:#5ea6eb;
 }
 
 .women:hover{
-    transform: scale(1.05);
+    transform: scale(1.025);
     color:#5ea6eb;
 }
 
 .pair:hover{
-    transform: scale(1.05);
+    transform: scale(1.025);
     color:#5ea6eb;
 }
 
 .dance:hover{
-    transform: scale(1.05);
+    transform: scale(1.025);
     color:#5ea6eb;
 }
 
 .all:hover{
-    transform: scale(1.05);
+    transform: scale(1.025);
     color:#5ea6eb;
 }
 

@@ -26,7 +26,7 @@ const Skaters = (props: IPropsSkaters) => {
             .then(data => setSkaterList(data))
     }, [])
 
-    function filterCat(category: string) {
+    const filterCat = (category: string) => {
         if (category !== "All Skaters") {
             setClicked(category)
             setCurrentSkaterList(skaterList.filter((sk8r) => sk8r.category === category))
@@ -37,11 +37,11 @@ const Skaters = (props: IPropsSkaters) => {
         }
     }
 
-    function goSearch() {
+    const goSearch = () => {
         setCurrentSkaterList(skaterList.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
     }
 
-    function handleEnter(event: React.KeyboardEvent<HTMLImageElement>) {
+    const handleEnter = (event: React.KeyboardEvent<HTMLImageElement>) => {
         if (event.key === 'Enter') {
             setCurrentSkaterList(skaterList.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
         }

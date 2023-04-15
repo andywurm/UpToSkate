@@ -32,6 +32,7 @@ const Media = (props: IPropsMedia) => {
                             </ImageListItem>
                         )
                     })}
+
                 </ImageList>
             </div>
         </motion.div>

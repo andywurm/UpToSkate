@@ -22,13 +22,13 @@
 .image{
     height: 110px;
     width: 110px;
-    padding: 3px 0;
+    padding: 7px 0;
 }
 
 .inner{
     border: solid rgb(131, 159, 176) 1px;
     box-shadow: 1px 2px 3px #88888873;
-    border-radius: 6px;
+    border-radius: 2px;
     display: flex;
     align-items: center;
     background-color:#f9f7f77d;
@@ -69,11 +69,11 @@ button{
     color:white;
     background-color: #2CA9EF;
     border: solid #1f8ece 1px;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 10px 15px;
     font-size: .9em;
 }
 
 button:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }

@@ -38,26 +38,27 @@ const ResultInfo = (props: IPropsResultInfo) => {
             style={{ height: "fit-content", paddingBottom: "50px" }}
         >
 
-
             <div className="outsideContainer">
                 <div className="resultContainer">
 
                     <div className="outerHeader">
+
                         <div className="headerImage">
                             <img src={`./../img/${props.eventInformation.img}`} alt='Event' className="rImage" />
                         </div>
+                        
                         <div className="headerInfo">
                             <div className="eventRName">{props.eventInformation.event}</div>
                             <div className="eventRLocation">{props.eventInformation.location}</div>
                             <span style={{ fontWeight: '400', fontSize: '1.1em' }}>Final Results</span>
                         </div>
+
                     </div>
-
-
 
                     <div className="resultSection">
 
                         <Accordion style={{ width: '100%' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1a-content"
@@ -201,10 +202,11 @@ const ResultInfo = (props: IPropsResultInfo) => {
                             </AccordionDetails>
                         </Accordion>
 
-
                     </div>
+
                 </div>
             </div>
+
         </motion.div>
     )
 }
