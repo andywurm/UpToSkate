@@ -44,6 +44,8 @@ const Skaters = (props: IPropsSkaters) => {
     const handleEnter = (event: React.KeyboardEvent<HTMLImageElement>) => {
         if (event.key === 'Enter') {
             setCurrentSkaterList(skaterList.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
+            setClicked("All Skaters")
+            setSearched("")
         }
     }
 
@@ -63,7 +65,7 @@ const Skaters = (props: IPropsSkaters) => {
                         <img className="magnify" onClick={() => goSearch()} src={search} alt="" />
                     </div>
                     <div className="second" onKeyPress={handleEnter}>
-                        <input className="inputBar noselect" onChange={(e) => setSearched(e.target.value)} placeholder=' Type Here...' />
+                        <input className="inputBar noselect" value={searched} onChange={(e) => setSearched(e.target.value)} placeholder=' Type Here...' />
                     </div>
                 </div>
 

@@ -9,7 +9,7 @@ const app = express()
 const cors = require('cors')
 app.use(cors())
 
-// Creates tables that do not exist.
+// Syncs db to match models. Wipes database of all entries
 db.sync({
     force: true
 }).then(async () => {

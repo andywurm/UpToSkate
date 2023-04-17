@@ -1,7 +1,6 @@
 import db from ".";
 import { DataTypes, Model } from "sequelize";
 
-
 export interface EventsAttributes {
     event: string
     date: string
@@ -33,7 +32,6 @@ class Events extends Model<EventsAttributes> implements EventsAttributes {
     public topPairs!: ScoresAttributes[];
     public topDancers!: ScoresAttributes[];
     public status: string;
-
 }
 
 Events.init(
