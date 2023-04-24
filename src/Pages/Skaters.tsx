@@ -19,12 +19,6 @@ const Skaters = (props: IPropsSkaters) => {
     const [searched, setSearched] = useState("")
     props.setNavColor(true)
 
-    // useEffect(() => {
-    //     fetch("http://localhost:5000/skaters")
-    //         .then(res => res.json())
-    //         .then(data => console.log(data))
-    // }, [])
-
     function filterCat(category: string) {
         if (category !== "All Skaters") {
             setClicked(category)
@@ -39,12 +33,15 @@ const Skaters = (props: IPropsSkaters) => {
     function goSearch() {
         console.log(searched)
         setSkaterList(skaters.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
+        setClicked("")
     }
 
     function handleEnter(event: React.KeyboardEvent<HTMLImageElement>) {
         console.log("here")
         if (event.key === 'Enter') {
             setSkaterList(skaters.filter((sk8r) => sk8r.name.toLowerCase().includes(searched.toLowerCase())))
+            setClicked("")
+            setSearched("")
         }
     }
 
@@ -64,7 +61,7 @@ const Skaters = (props: IPropsSkaters) => {
                         <img className="magnify" onClick={() => goSearch()} src={search} alt="" />
                     </div>
                     <div className="second" onKeyPress={handleEnter}>
-                        <input className="inputBar noselect" onChange={(e) => setSearched(e.target.value)} placeholder=' Type Here...' />
+                        <input className="inputBar noselect" value={searched} onChange={(e) => setSearched(e.target.value)} placeholder=' Type Here...' />
                     </div>
                 </div>
 
